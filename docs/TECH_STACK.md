@@ -12,6 +12,11 @@
     -   *Why:* ~40MB size. Runs on almost any CPU. Good enough for simple dictation.
     -   *Fallback:* `int8` quantization is mandatory for speed.
 
+## Audio & Permissions
+- **Capture Location:** Audio is captured in a visible permissions page (`permissions.html`) and handled in the offscreen document (`offscreen.js`). Popups cannot reliably request `getUserMedia`.
+- **Offscreen Reason:** `chrome.offscreen.createDocument` is created with `USER_MEDIA` and `WORKERS` reasons so `offscreen.js` can access the microphone and host heavy model work.
+- **Message Protocol:** `popup.js` → `service-worker.js` → `offscreen.js` using explicit `OFFSCREEN_` prefixed messages to avoid broadcast collisions.
+
 ## State & Storage
 -   **Persistence:** `chrome.storage.local`
 -   **Messaging:** `chrome.runtime.sendMessage` (One-time requests)

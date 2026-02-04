@@ -26,11 +26,11 @@
 
 ## Phase 4: The Ear (Microphone Access)
 **Goal:** Get access to the mic stream.
-- [ ] **Step 4.1:** Update `manifest.json` permissions: `["offscreen", "activeTab", "scripting"]` (Note: `microphone` is requested at runtime).
-- [ ] **Step 4.2:** In `popup.html`, add `Record` and `Stop` buttons.
-- [ ] **Step 4.3:** In `popup.js`, add `navigator.mediaDevices.getUserMedia` logic.
-- [ ] **Step 4.4:** Verify Permission Prompt triggers on click.
-- [ ] **Step 4.5:** Initialize `MediaRecorder` with the stream. Log "Recorder Started".
+- [x] **Step 4.1:** Update `manifest.json` permissions: `["offscreen", "activeTab", "scripting"]` (Note: `microphone` is requested at runtime).
+- [x] **Step 4.2:** In `popup.html`, add `Record` and `Stop` buttons.
+- [x] **Step 4.3:** In `popup.js`, send recording commands to Service Worker instead of capturing locally.
+- [x] **Step 4.4:** Implement `offscreen.js` audio capture (`getUserMedia` + `MediaRecorder`) because offscreen needs `USER_MEDIA` reason to access the mic.
+- [x] **Step 4.5:** Add `permissions.html`/`permissions.js` visible page to request mic permission (offscreen cannot prompt). Auto-close tab on grant.
 
 ## Phase 5: The Carrier (Audio Data Handling)
 **Goal:** Move audio from Popup (UI) to Offscreen (Processor).

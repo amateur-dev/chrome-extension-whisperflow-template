@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "description": "Voice-to-Text for any text input on the web using local AI.",
   "permissions": [
-    "offscreen"
+    "offscreen",
+    "activeTab",
+    "scripting"
   ],
   "icons": {
     "16": "icons/icon16.png",
