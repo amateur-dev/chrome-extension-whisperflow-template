@@ -2,19 +2,19 @@
 
 ## Phase 1: The Bare Metal (Manifest & Popup)
 **Goal:** Get the extension installed and opening a popup.
-- [ ] **Step 1.1:** Create `manifest.json` (MV3) with name, version, and empty `background`.
-- [ ] **Step 1.2:** Create icons (placeholders) to avoid load errors.
-- [ ] **Step 1.3:** Create `popup.html` with a single "Hello World" `<h1>`.
-- [ ] **Step 1.4:** Load unpacked extension in Chrome. Check for errors.
+- [x] **Step 1.1:** Create `manifest.json` (MV3) with name, version, and empty `background`.
+- [x] **Step 1.2:** Create icons (placeholders) to avoid load errors.
+- [x] **Step 1.3:** Create `popup.html` with a single "Hello World" `<h1>`.
+- [x] **Step 1.4:** Load unpacked extension in Chrome. Check for errors.
 - [ ] **Step 1.5:** Open Popup. verify "Hello World".
 
 ## Phase 2: The Infrastructure (Service Worker & Offscreen)
 **Goal:** Establish the hidden "AI Server" (Offscreen) environment.
-- [ ] **Step 2.1:** Create `service-worker.js`. Add `console.log('SW Loaded')`.
-- [ ] **Step 2.2:** Update `manifest.json` to register the service worker. Reload & Verify console.
+- [x] **Step 2.1:** Create `service-worker.js`. Add `console.log('SW Loaded')`.
+- [x] **Step 2.2:** Update `manifest.json` to register the service worker. Reload & Verify console.
 - [ ] **Step 2.3:** Create `offscreen.html` (empty body) and `offscreen.js` (console log).
 - [ ] **Step 2.4:** In `service-worker.js`, write `setupOffscreenDocument()` function using `chrome.offscreen.createDocument`.
-- [ ] **Step 2.5:** Call setup on SW install. Reload. Validate `offscreen.html` is inspecting in Chrome Task Manager or `chrome://inspect`.
+- [ ] **Step 2.5:** Call setup on SW install. Reload.een Validate `offscr.html` is inspecting in Chrome Task Manager or `chrome://inspect`.
 
 ## Phase 3: The Nervous System (Messaging)
 **Goal:** Popup talks to SW, SW talks to Offscreen.
