@@ -3,6 +3,9 @@
   "name": "VibeCoding Extension",
   "version": "0.0.1",
   "description": "Voice-to-Text for any text input on the web using local AI.",
+  "permissions": [
+    "offscreen"
+  ],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",

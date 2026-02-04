@@ -6,23 +6,23 @@
 - [x] **Step 1.2:** Create icons (placeholders) to avoid load errors.
 - [x] **Step 1.3:** Create `popup.html` with a single "Hello World" `<h1>`.
 - [x] **Step 1.4:** Load unpacked extension in Chrome. Check for errors.
-- [ ] **Step 1.5:** Open Popup. verify "Hello World".
+- [x] **Step 1.5:** Open Popup. verify "Hello World".
 
 ## Phase 2: The Infrastructure (Service Worker & Offscreen)
 **Goal:** Establish the hidden "AI Server" (Offscreen) environment.
 - [x] **Step 2.1:** Create `service-worker.js`. Add `console.log('SW Loaded')`.
 - [x] **Step 2.2:** Update `manifest.json` to register the service worker. Reload & Verify console.
-- [ ] **Step 2.3:** Create `offscreen.html` (empty body) and `offscreen.js` (console log).
-- [ ] **Step 2.4:** In `service-worker.js`, write `setupOffscreenDocument()` function using `chrome.offscreen.createDocument`.
-- [ ] **Step 2.5:** Call setup on SW install. Reload.een Validate `offscr.html` is inspecting in Chrome Task Manager or `chrome://inspect`.
+- [x] **Step 2.3:** Create `offscreen.html` (empty body) and `offscreen.js` (console log).
+- [x] **Step 2.4:** In `service-worker.js`, write `setupOffscreenDocument()` function using `chrome.offscreen.createDocument`.
+- [x] **Step 2.5:** Call setup on SW install. Reload. Validate `offscreen.html` is inspecting in Chrome Task Manager or `chrome://inspect`.
 
 ## Phase 3: The Nervous System (Messaging)
 **Goal:** Popup talks to SW, SW talks to Offscreen.
-- [ ] **Step 3.1:** In `popup.js`, add button "Ping". Add click listener sending `{type: 'PING'}` to runtime.
-- [ ] **Step 3.2:** In `service-worker.js`, add `onMessage`. Log "Received Ping". Verify Popup -> SW connection.
-- [ ] **Step 3.3:** In `offscreen.js`, add `onMessage`. Log "Offscreen received".
-- [ ] **Step 3.4:** Update `service-worker.js` to forward the PING to `chrome.runtime.sendMessage` (targeting offscreen) or use clients.matchAll. *Careful here: Offscreen is a runtime target.*
-- [ ] **Step 3.5:** Verify end-to-end: Click Popup -> Log in SW -> Log in Offscreen.
+- [x] **Step 3.1:** In `popup.js`, add button "Ping". Add click listener sending `{type: 'PING'}` to runtime.
+- [x] **Step 3.2:** In `service-worker.js`, add `onMessage`. Log "Received Ping". Verify Popup -> SW connection.
+- [x] **Step 3.3:** In `offscreen.js`, add `onMessage`. Log "Offscreen received".
+- [x] **Step 3.4:** Update `service-worker.js` to forward the PING to `chrome.runtime.sendMessage` (targeting offscreen) or use clients.matchAll. *Careful here: Offscreen is a runtime target.*
+- [x] **Step 3.5:** Verify end-to-end: Click Popup -> Log in SW -> Log in Offscreen.
 
 ## Phase 4: The Ear (Microphone Access)
 **Goal:** Get access to the mic stream.
